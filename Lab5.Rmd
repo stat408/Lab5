@@ -1,44 +1,37 @@
 ---
-title: "Lab 5: Graphics"
-author: 'Group Member Names - here'
-output: pdf_document
+title: "Lab 5:"
+author: 'Name - here'
+output: html_document
 ---
-Turn in one copy for each group. If group members are not present in class they will be required to complete their own lab to receive credit. Please turn in **both a DOC or PDF file and your R Markdown script**.  
 
 ## Lab Overview
+For this question, a subset of the tables contained in the History of Baseball database are available. Additional details are available here: [https://www.kaggle.com/seanlahman/the-history-of-baseball](https://www.kaggle.com/seanlahman/the-history-of-baseball). The following tables will be used for these questions:
 
+- player
+- all_star
+- salary
 
+```{r, message = F}
+library(tidyverse)
+player <- read_csv("http://math.montana.edu/ahoegh/teaching/stat408/datasets/player.csv")
+all_star <- read_csv("http://math.montana.edu/ahoegh/teaching/stat408/datasets/all_star.csv")
+salary <- read_csv("http://math.montana.edu/ahoegh/teaching/stat408/datasets/salary.csv")
 
-## Questions
-Answer the following questions in this R Markdown document. Please include code where necessary.
-
-### 1. Central Limit Theorem Example (10 points)
-
-The central limit theorem is a foundational idea in statistical inference. Typically, it is assumed that the mean of a sample converges to a normal distribution when the sample size is greater than (20 or 30?). So where do these numbers come from? 
-
-To look at this question, modify the function to also print a histrogram. For full credit your function should have appropriate titles, labels, and be aesthetically pleasing.
-
-```{r}
-CLT <- function(num.sims){
-  # function that simulates uniform random numbers to illustrate the central limit theorem
-  # ARGS: num.sims - the number of samples to average in central limit theorem
-  # RETURNS: list containing the mean and standard deviation of the average of the samples
-  #          SHOULD ALSO CREATE A HISTOGRAM, WITH APPROPRIATE TITLES
-  num.replicates <- 10000 # how many times to repeat this process
-  samples <- rep(0, num.replicates)
-  for (i in 1:num.replicates){
-    samples[i] <- mean(runif(num.sims, min = 0, max = 100))
-  }
-  # CREATE HISTOGRAM HERE
-  return(list(mean(samples), sd(samples)))
-}
 ```
 
+### 1. (2 points)
+How many players were born in Montana.
 
-Demonstrate the function works by calling the function with 10, 30, 100, and 1000 samples. Briefly discuss the differences in these figures/results.
+### 2. (4 points)
+Print a table that contains each player born in Montana. The table should contain the player_id as well as given name and their total salary across all years. If salary is not available (pre-1985), include the player but have an NA for salary.
 
-### 2. (10 points)
+### 3. (2 points)
 
-Download the data set on earthquakes, provided by the USGS, available at [http://www.math.montana.edu/ahoegh/teaching/stat408/datasets/EarthquakesAll.csv](http://www.math.montana.edu/ahoegh/teaching/stat408/datasets/EarthquakesAll.csv). The data set contains earthquakes from 1965 to 2016.
+Create a thin dataset for that contains the yearly salaries of David Ortiz, Derek Jeter, and Troy Tulowitzki.
 
-Create a compelling graphic from this data set. The choice of what and how is completely up to you. Then provide a short summary of the story your graphic depicts.
+### 4. (4 points)
+
+Create a wide dataset for that contains the salaries of David Ortiz, Derek Jeter, and Troy Tulowitzki.
+
+### 5. (4 points)
+Which player(s) made the most appearances as an all star representing the National League (NL)?
