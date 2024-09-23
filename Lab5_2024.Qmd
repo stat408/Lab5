@@ -1,0 +1,30 @@
+---
+title: "Lab 5"
+format: pdf
+editor: source
+---
+
+## Lab Overview
+Suppose you have been hired as a data scientist by Zillow to improve their price prediction tool in Australia. You have been given a dataset with housing prices in Melbourne. Here is a description of the dataset [https://www.kaggle.com/datasets/dansbecker/melbourne-housing-snapshot?resource=download](https://www.kaggle.com/datasets/dansbecker/melbourne-housing-snapshot?resource=download)
+
+```{r, message = F}
+library(tidyverse)
+melb <- read_csv('https://raw.githubusercontent.com/stat408/Lab5/refs/heads/master/melb_data.csv')
+```
+### Q1. 5 points
+
+Create a polished figure that explores how at least one discrete variable relates to price.
+
+
+
+### Q2. 5 points
+
+Create a polished figure that explores how at least one continuous variable relates to price.
+
+### Q3. 5 points
+
+Create a polished figure that explores how at least one continuous variable _and_ a categorical variable relate to price.
+
+### Q4. 5 points
+
+Summarise what you leared in Q1 - Q3 and how that could be included in a statistical model to predict housing prices.c
