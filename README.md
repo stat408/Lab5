@@ -1,33 +1,26 @@
 ## Lab 5
 
-## Lab Overview
-For this question, a subset of the tables contained in the History of Baseball database are available. Additional details are available here: [https://www.kaggle.com/seanlahman/the-history-of-baseball](https://www.kaggle.com/seanlahman/the-history-of-baseball). The following tables will be used for these questions:
-
-- player
-- all_star
-- salary
+Suppose you have been hired as a data scientist by Zillow to improve their price prediction tool in Australia. You have been given a dataset with housing prices in Melbourne. Here is a description of the dataset [https://www.kaggle.com/datasets/dansbecker/melbourne-housing-snapshot?resource=download](https://www.kaggle.com/datasets/dansbecker/melbourne-housing-snapshot?resource=download)
 
 ```
 library(tidyverse)
-player <- read_csv("http://math.montana.edu/ahoegh/teaching/stat408/datasets/player.csv")
-all_star <- read_csv("http://math.montana.edu/ahoegh/teaching/stat408/datasets/all_star.csv")
-salary <- read_csv("http://math.montana.edu/ahoegh/teaching/stat408/datasets/salary.csv")
-
+melb <- read_csv('https://raw.githubusercontent.com/stat408/Lab5/refs/heads/master/melb_data.csv')
 ```
+### Q1. 5 points
 
-### 1. (2 points)
-How many players were born in Montana.
+Create a polished figure that explores how at least one discrete variable relates to price.
 
-### 2. (4 points)
-Print a table that contains each player born in Montana. The table should contain the player_id as well as given name and their total salary across all years. If salary is not available (pre-1985), include the player but have an NA for salary.
 
-### 3. (2 points)
 
-Create a thin dataset for that contains the yearly salaries of David Ortiz, Derek Jeter, and Troy Tulowitzki.
 
-### 4. (4 points)
+### Q2. 5 points
 
-Create a wide dataset for that contains the salaries of David Ortiz, Derek Jeter, and Troy Tulowitzki.
+Create a polished figure that explores how at least one continuous variable relates to price.
 
-### 5. (4 points)
-Which player(s) made the most appearances as an all star representing the National League (NL)?
+### Q3. 5 points
+
+Create a polished figure that explores how at least one continuous variable _and_ a categorical variable relate to price.
+
+### Q4. 5 points
+
+Summarise what you leared in Q1 - Q3 and how that could be included in a statistical model to predict housing prices
